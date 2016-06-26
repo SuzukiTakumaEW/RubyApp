@@ -1,3 +1,5 @@
+<%#= stylesheet_link_tag "inside/base", :media => "all" %>
+
 <h1>Tyson</h1>
 <p>
 現在登録されている本のタイトルは次のとおりです。
@@ -8,3 +10,43 @@
 [タイトル] <%= title.name %>, [発売日] <%= title.sales_date %><br />
 <% end %>
 </p>
+
+<% @portfolios.each do |potfolio| %>
+<p>
+[ゲームID] <%= potfolio.gameid %>
+</p>
+<p>
+[ゲームタイトル] <%= potfolio.gamename %>
+<% end %>
+</p>
+
+
+<p>
+<%= image_tag 'suzuki.png', :alt => '鈴木',:size => '460x275'%>
+</p>
+
+<%= link_to '就職大作戦2015', 'http://daisakusen.unity3d.jp/interviews/interview01.html' %>
+
+<p>
+<%= link_to "http://daisakusen.unity3d.jp/interviews/interview01.html", class: 'reload' do %>
+  <%#<i class='general foundicon-refresh'></i> Reload%>
+  <%= image_tag 'igarashi.png', :alt => '五十嵐',:size => '460x275'%>
+<% end %>
+</p>
+
+<p>
+<%# link_to 'Yahoo', 'http://www.yahoo.co.jp/' do %>       
+<% link_to "http://daisakusen.unity3d.jp/interviews/interview01.html" do %>                                                                                              
+  <span>文字列</span> 
+  <%= image_tag "/assets/suzuki.png", :alt => '鈴木リンク',:size => '460x275'%>
+  <%#= image_tag("suzuki.png", :alt => '鈴木ドヤ' %>
+<% end %>
+</p>
+
+<%#  %>
+<p>
+<%#= link_to image_tag 'suzuki.png','/views/application/nextView' %>
+</p>
+
+<% id = 1 %>
+<%#= link_to "リンクテキスト", { :controller => :items, :action => :show, :id => id, :key => :value }, { :id => "link_id", :class => "link_class", :target => "_blank"} %>

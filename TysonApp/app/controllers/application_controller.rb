@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
   end
   def drow
     @titles = Title.all
+    @portfolios = Portfolio.all
   end
 end
