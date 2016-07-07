@@ -1,0 +1,13 @@
+<% require 'rubygems' %>
+<% require 'zip'%>
+
+<%
+    filename = 'sample.zip'
+    filepath = Rails.root.join('tmp', filename)
+    stat = File::stat(filepath)
+    send_file(filepath, :filename => filename, :length => stat.size)
+%>
+
+<p>
+Welcome to Index Page
+</p>

@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   #root 'application#tyson'
   root 'application#drow'
+  
+  get 'db' => 'application#firstdb', as: :db
+  get  'static_pages/contact'
+
+  #get application#tyson'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
