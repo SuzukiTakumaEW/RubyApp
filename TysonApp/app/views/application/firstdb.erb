@@ -4,10 +4,77 @@
 <%
     filename = 'sample.zip'
     filepath = Rails.root.join('tmp', filename)
-    stat = File::stat(filepath)
-    send_file(filepath, :filename => filename, :length => stat.size)
+    #stat = File::stat(filepath)
+    #send_file(filepath, :filename => filename, :length => stat.size)
 %>
 
+<% provide(:title, '制作したゲーム一覧') %>
 <p>
-Welcome to Index Page
+<!--Welcome to Index Page -->
 </p>
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title><%= yield(:title) %> | Project name</title>
+    <%= stylesheet_link_tag    'application/firstdb', media: 'all' %>
+    <%= javascript_include_tag 'application/firstdb' %>
+    <%#= stylesheet_link_tag    'admin/dashboard', media: 'all' %>
+    <%#= javascript_include_tag 'admin/dashboard' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--タイトル名 -->
+          <a class="navbar-brand" href="#">ポートフォリオ</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="navbar-list-menu" class="nav navbar-nav navbar-right">
+            <!-- スマホ用のメニュー部分 -->
+            <%= sidebar_list_items() %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <!-- PC用のメニュー部分 -->
+            <%= sidebar_list_items() %>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <% if yield(:title) %>
+            <h1 class="page-header"><%= yield(:title) %></h1>
+          <% end %>
+          <% if flash[:notice] %>
+            <div class="alert alert-info"><%= flash[:notice] %></div>
+          <% end %>
+          <% if flash[:error] %>
+            <div class="alert alert-danger"><%= flash[:error] %></div>
+          <% end %>
+
+          <%= yield %>
+
+        </div>
+      </div>
+    </div>
+
+  </body>

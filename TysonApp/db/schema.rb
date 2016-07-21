@@ -14,17 +14,13 @@
 ActiveRecord::Schema.define(version: 20160625114910) do
 
   create_table "portfolios", force: :cascade do |t|
-    t.integer  "gameid"
-    t.string   "gamename"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "gameid"
+    t.string  "gamename"
   end
 
   create_table "titles", force: :cascade do |t|
-    t.string   "name"
-    t.date     "sales_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name"
+    t.date   "sales_date"
   end
 
 end

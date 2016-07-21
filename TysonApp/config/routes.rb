@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   root 'application#drow'
   
   get 'db' => 'application#firstdb', as: :db
-  get  'static_pages/contact'
 
   #get application#tyson'
 

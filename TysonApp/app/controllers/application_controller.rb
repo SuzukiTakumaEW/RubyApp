@@ -10,23 +10,17 @@ class ApplicationController < ActionController::Base
   
   def tyson
     render text: "tyson"
-    #@titles = Title.all
+    @titles = Title.all
   end
   
   def firstdb
     filename = 'sample.zip'
     filepath = Rails.root.join('tmp', filename)
-    stat = File::stat(filepath)
-    send_file(filepath, :filename => filename, :length => stat.size)
+    #stat = File::stat(filepath)
+    #send_file(filepath, :filename => filename, :length => stat.size)
   end  
 
   def drow
-    #filename = 'sample.zip'
-
-    #filepath = Rails.root.join('tmp', filename)
-    #stat = File::stat(filepath)
-    #send_file(filepath, :filename => filename, :length => stat.size)
- 
     @titles = Title.all
     @portfolios = Portfolio.all
   end
