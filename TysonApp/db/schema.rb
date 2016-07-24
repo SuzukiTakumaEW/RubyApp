@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625114910) do
+ActiveRecord::Schema.define(version: 20160724121059) do
 
   create_table "portfolios", force: :cascade do |t|
     t.integer "gameid"
     t.string  "gamename"
+    t.string  "to"
+    t.string  "url"
+    t.string  "google"
   end
 
   create_table "titles", force: :cascade do |t|

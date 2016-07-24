@@ -8,10 +8,12 @@
     #send_file(filepath, :filename => filename, :length => stat.size)
 %>
 
-<% provide(:title, '制作したゲーム一覧') %>
+
 <p>
-<!--Welcome to Index Page -->
+Welcome to Index Page
 </p>
+
+        
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -41,7 +43,7 @@
             <span class="icon-bar"></span>
           </button>
           <!--タイトル名 -->
-          <a class="navbar-brand" href="#">ポートフォリオ</a>
+          <a class="navbar-brand" href="#">日本工学院八王子専門学校4年 制作ゲーム紹介</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="navbar-list-menu" class="nav navbar-nav navbar-right">
@@ -50,12 +52,13 @@
           </ul>
         </div>
       </div>
+      
     </nav>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
+          <ul class="nav nav-sidebar" class="span4">
             <!-- PC用のメニュー部分 -->
             <%= sidebar_list_items() %>
           </ul>
@@ -65,16 +68,22 @@
             <h1 class="page-header"><%= yield(:title) %></h1>
           <% end %>
           <% if flash[:notice] %>
-            <div class="alert alert-info"><%= flash[:notice] %></div>
+            <div class="alert alert-info">
+              <%= flash[:notice] %></div>
           <% end %>
           <% if flash[:error] %>
             <div class="alert alert-danger"><%= flash[:error] %></div>
           <% end %>
 
           <%= yield %>
-
         </div>
+        
+        
       </div>
     </div>
+</div>
 
-  </body>
+        <!-- <div class="col-sm-6">Level 1:.col-sm-3<br>dvf</div> -->
+
+
+</body>

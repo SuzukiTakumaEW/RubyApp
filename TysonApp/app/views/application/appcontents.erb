@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <!-- テーブルにクラスを追加 -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ゲーム名</th>
+        <th>ゲーム説明</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @portfolios.each do |admin_user| %>
+        <tr>
+          <td><%= admin_user.gamename %></td>
+          <td><%= link_to '概要', admin_user.url %></td>
+          <td><%= link_to 'ダウンロード', admin_user.google %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

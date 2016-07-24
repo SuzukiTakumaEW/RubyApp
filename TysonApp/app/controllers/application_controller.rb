@@ -14,11 +14,34 @@ class ApplicationController < ActionController::Base
   end
   
   def firstdb
+        @titles = Title.all
+    @portfolios = Portfolio.all
     filename = 'sample.zip'
     filepath = Rails.root.join('tmp', filename)
     #stat = File::stat(filepath)
     #send_file(filepath, :filename => filename, :length => stat.size)
-  end  
+  end 
+  
+  #ファイルサイズがデカイと思い
+  def pazu
+    #send_file Rails.root.join("tmp/ver.zip")
+    filename = 'pazu.zip'
+    filepath = Rails.root.join('tmp', filename)
+    stat = File::stat(filepath)
+    #send_file(filepath, :filename => filename, :length => stat.size)
+  end 
+  
+  def map
+    filename = 'sample.zip'
+    filepath = Rails.root.join('tmp', filename)
+    stat = File::stat(filepath)
+    #send_file(filepath, :filename => filename, :length => stat.size)
+  end 
+  
+  def appcontents
+    @titles = Title.all
+    @portfolios = Portfolio.all
+  end
 
   def drow
     @titles = Title.all

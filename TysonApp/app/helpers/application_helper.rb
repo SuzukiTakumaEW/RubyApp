@@ -15,10 +15,14 @@ module ApplicationHelper
   # サイドメニューの項目を出力する
   def sidebar_list_items
     items = [
-      {:text => 'Users',      :path => "http://daisakusen.unity3d.jp/interviews/interview01.html"},
-      {:text => 'Contacts',      :path => "http://daisakusen.unity3d.jp/interviews/interview01.html"}
+      {:text => '就職大作戦2015',      :path => "http://daisakusen.unity3d.jp/interviews/interview01.html"},
+      #{:text => 'Contacts',      :path => "http://daisakusen.unity3d.jp/interviews/interview01.html"}
+      {:text => 'ゲーム一覧',   :path => "https://ruby-app-suzukitakuma.c9users.io/appcontents"},
+            #{:text => 'Contacts',      :path => "http://daisakusen.unity3d.jp/interviews/interview01.html"}
+      {:text => 'GooglePlay',   :path => "https://play.google.com/store/apps/developer?id=鈴木拓馬&hl=ja"}
       #{:text => 'Users',      :path => admin_users_path},
       #{:text => 'Contacts',   :path => admin_contacts_path}
+      #, controller: "application", action: "firstdb"
     ]
 
     html = ''

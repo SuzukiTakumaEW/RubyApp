@@ -10,5 +10,5 @@
 
 Title.create(:name => '宇宙に行った日', :sales_date => '2011-06-28')
 Title.create(:name => '観察日記', :sales_date => '2011-11-14')
-Portfolio.create(:gameid => 1, :gamename => 'PazuGura')
-Portfolio.create(:gameid => 2, :gamename => '溶解Map')
+Portfolio.create(:gameid => 1, :gamename => 'PazuGura', :to => 'pazu',:url =>'https://github.com/KOGAKUINteam4/PazuGura/tree/develop',:google => 'https://play.google.com/store/apps/details?id=com.Company.PazuGra&hl=ja')
+Portfolio.create(:gameid => 2, :gamename => '溶解Map', :to => 'map',:url =>'https://github.com/SuzukiTakumaEWTGS/TGS_01/tree/develop',:google => 'https://play.google.com/store/search?q=鈴木拓馬&hl=ja')

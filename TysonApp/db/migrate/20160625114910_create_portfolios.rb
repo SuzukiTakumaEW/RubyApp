@@ -4,6 +4,9 @@ class CreatePortfolios < ActiveRecord::Migration
     create_table :portfolios do |t|
       t.integer :gameid
       t.string :gamename
+      t.string :to
+      t.string :url
+      t.string :google
       #t.timestamps null: false
     end
   end

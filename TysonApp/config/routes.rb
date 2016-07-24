@@ -4,9 +4,15 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   #root 'application#tyson'
-  root 'application#drow'
+  #root 'application#drow'
+  root 'application#firstdb'
   
   get 'db' => 'application#firstdb', as: :db
+  get 'rendertyson' => 'application#tyson', as: :rendertyson
+  get 'appcontents' => 'application#appcontents', as: :appcontents
+  
+  get 'pazu' => 'application#pazu', as: :pazu
+  get 'map' => 'application#map', as: :map
 
   #get application#tyson'
 
